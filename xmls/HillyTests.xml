@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteName" parallel="false">
+
+	<test name="LoginPage">
+		<classes>
+			<class name="testForHily.TestForLoginPage">
+			</class>
+		</classes>
+	</test>
+
+	<test name="ActivityPage">
+		<classes>
+			<class name="testForHily.TestOfActivity">
+			</class>
+		</classes>
+	</test>
+
+	<test name="SettingsPage">
+		<classes>
+			<class name="testForHily.TestOfSettingsPage">
+			</class>
+		</classes>
+	</test>
+
+	<test name="MessagesPage">
+		<classes>
+			<class name="testForHily.TestsForMessagesPage">
+			</class>
+		</classes>
+	</test>
+
+	<test name="MainPage">
+		<classes>
+			<class name="testForHily.TestsOfMainPage">
+			</class>
+		</classes>
+	</test>
+</suite>
+

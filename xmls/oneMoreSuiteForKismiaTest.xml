@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SuiteName" parallel="false">
+	<test name="setAge">
+		<classes>
+			<class name="homeWork14.KismiaTestLike">
+				<methods>
+					<parameter name = "quantityOfIterationToCheckRepeats" value = "40"></parameter>
+					<parameter name = "From" value = "19"></parameter>
+					<parameter name = "To" value = "20"></parameter>
+					<parameter name = "Gender" value = "f"></parameter>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+

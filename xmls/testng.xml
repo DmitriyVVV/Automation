@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteName" parallel="false">
+<parameter name="email" value="juh6y"></parameter>
+<parameter name="pass" value="wrsd"></parameter>
+<test name="TestName">
+	<classes>
+		<class name="lesson8.ParamsExample">
+		</class>
+	</classes>
+</test>
+</suite>
+

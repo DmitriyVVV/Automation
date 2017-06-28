@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteName" parallel="false">
+	<parameter name="email" value="A2559597@MVRHT.NET"></parameter>
+	<parameter name="password" value="qwe"></parameter>
+	<test name="login">
+		<classes>
+			<class name="homeWork8.KismiaTests">
+			</class>
+		</classes>
+	</test>
+</suite>
+
