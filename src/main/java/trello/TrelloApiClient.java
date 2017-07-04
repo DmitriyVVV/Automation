@@ -148,11 +148,11 @@ public class TrelloApiClient {
 
     //Создание листа
     public String createList(String name) throws IOException {
-        String url = BASE_URL +"lists" + "?key="+ KEY + "&token=" + TOKEN;
+        String url = BASE_URL +"boards/" + boardId + "/lists" + "?key="+ KEY + "&token=" + TOKEN;
 
         RequestBody requestBody = new FormBody.Builder()
-                .add("name", name)
-                .add("idBoard", boardId).build();
+                .add("name", name).build();
+                //.add("idBoard", boardId).build();
 
 
         Request request = new Request.Builder().post(requestBody).url(url).build();
@@ -178,7 +178,7 @@ public class TrelloApiClient {
         //System.out.println(getListOfCards());
         //System.out.println(getListOfPages());
         //System.out.println(dataAboutCard());/**/
-        //System.out.println(createList("New_List"));/**/
+        //System.out.println(createList("New_List"));
         //System.out.println(commentCard("It is a comment."));/**/
     }
 }
