@@ -70,6 +70,8 @@ public class CreateUserByOkHttp {
         Request requestMainStep = new Request.Builder().url("http://auth.chakrads.com/registration").post(requestBodyMainStep).build();
         String s = okHttpClient.newCall(requestMainStep).execute().body().string();
         System.out.println(s);
+        List<Cookie> cookies = new ArrayList<>();
+        //DefaultCookieStorage cookieStorage = new DefaultCookieStorage().saveFromResponse(, cookies);
 
         RequestBody requestBodyBirthDate = new FormBody.Builder()
                 .add("birth_date", "1990-05-05").build();
@@ -86,6 +88,6 @@ public class CreateUserByOkHttp {
                 .add("photo_id", "15447").build();
         Request requestAvatar = new Request.Builder().url("http://app.chakrads.com/user/photos/avatar").post(requestBodyAvatar).build();
         System.out.println(okHttpClient.newCall(requestAvatar).execute().body().string());
-        /**/
+
     }
 }
