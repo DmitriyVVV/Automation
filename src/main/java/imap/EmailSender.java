@@ -8,9 +8,7 @@ import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * Created by lolik on 25.05.2016.
- */
+
 public class EmailSender {
 
     String mailTo = "";

@@ -86,5 +86,6 @@ public class CreateUserByOkHttp {
                 .add("photo_id", "15447").build();
         Request requestAvatar = new Request.Builder().url("http://app.chakrads.com/user/photos/avatar").post(requestBodyAvatar).build();
         System.out.println(okHttpClient.newCall(requestAvatar).execute().body().string());
+        /**/
     }
 }
