@@ -12,6 +12,14 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Dmitriy on 09.06.2017.
  */
+/**
+ *
+ * Трэш и содомия
+ * Забудь это
+ *
+ */
+
+
 public class TestMail extends BrowserFactory{
 
     public void loginWIthUseTempMail() throws InterruptedException {

@@ -15,8 +15,8 @@ public class EmailSender {
 
     String mailTo = "";
 
-    final String username = "jenkins.kismia@gmail.com";
-    final String password = "qwe1rty2";
+    final String username = "";
+    final String password = "";
 
     Properties props = new Properties();
 
@@ -71,7 +71,7 @@ public class EmailSender {
             MimeMultipart content = new MimeMultipart();
             MimeBodyPart imagePart = new MimeBodyPart();
 
-            imagePart.attachFile("C:\\maksTableau.png");
+            imagePart.attachFile("");
 
             content.addBodyPart(imagePart);
 

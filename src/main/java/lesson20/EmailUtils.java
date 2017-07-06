@@ -25,24 +25,32 @@ public class EmailUtils {
     public void alala() throws EmailException {
         Email email = new SimpleEmail();
         email.setHostName("smtp.gmail.com");
-        email.setSmtpPort(587);
-        email.setAuthenticator(new DefaultAuthenticator("", ""));
+        email.setSmtpPort(465);
+        email.setAuthenticator(new DefaultAuthenticator("automationtestsnew@gmail.com", "qwe1rty2"));
         email.setSSLOnConnect(true);
-        email.setFrom("voskoboinikdima@gmail.com");
+        email.setFrom("automationtestsnew@gmail.com");
         email.setSubject("TestMail");
         email.setMsg("This is a test mail ... :-)");
-        email.addTo("");
+        email.addTo("automationtestsnew@gmail.com");
         email.send();
     }
 
     @Test
     public void alalalall() throws InterruptedException, EmailException, MessagingException, IOException {
-        ImapClient imapClient = new ImapClient("voskoboinikdima@gmail.com", "");
+        ImapClient imapClient = new ImapClient("automationtestsnew@gmail.com", "qwe1rty2");
         imapClient.connect();
-        List<Message> messages = imapClient.findMessages(With.from("от кого"));
+        List<Message> messages = imapClient.findMessages(With.from("noreply@chakrads.com"));
         for(Message message : messages){
             System.out.println(message.getSubject());
         }
+    }
+
+    @Test
+    public void readMessage() throws InterruptedException, EmailException, MessagingException, IOException {
+        ImapClient imapClient = new ImapClient("automationtestsnew@gmail.com", "qwe1rty2");
+        imapClient.connect();
+        Message message = imapClient.findMessages(With.from("noreply@chakrads.com")).get(0);
+        System.out.println(getTextFromMessage(message));
     }
 
 

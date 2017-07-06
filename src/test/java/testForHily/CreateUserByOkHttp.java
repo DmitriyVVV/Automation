@@ -4,8 +4,12 @@ import okhttp3.*;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Dmitriy on 05.07.2017.
@@ -19,13 +23,47 @@ public class CreateUserByOkHttp {
             " AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")).build();
 
 
+    public String generateEmail(int size){
+
+        String CHARACTERS = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+        String uniquePart = "";
+
+        for(int i=0; i<size; i++){
+            double a = Math.random()*CHARACTERS.length();
+            uniquePart+=CHARACTERS.charAt((int)a);
+        }
+
+        return "automationtestsnew+"  + uniquePart + "@gmail.com";
+    }
+
+    public String generateName(){
+        String names[] = {"Jack", "Frank", "Bill", "Saymon", "Chak", "Samuel", "Tom", "Jerry", "John", "Govard", "Brad"};
+        double a = Math.random()*names.length;
+        return names[(int)a];
+    }
+
+    public void addEmailToList(String email){
+        email = email + "||";
+        String filePath = "C:\\\\Users\\\\Dmitriy\\\\Downloads\\notes3.txt";
+
+        try {
+            Files.write(Paths.get(filePath), email.getBytes(), StandardOpenOption.APPEND);
+        }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
 
     @Test
     public void createUser() throws IOException{
 
+        String email = generateEmail(5);
+        addEmailToList(email);
+
         RequestBody requestBodyMainStep = new FormBody.Builder()
-                .add("name", "Chak")
-                .add("email", "v123d@testmail.com")
+                .add("name", generateName())
+                .add("email", email)
                 .add("pwd", "qwe1rty2")
                 .add("gender", "1")
                 .add("captcha", "null").build();
@@ -48,7 +86,5 @@ public class CreateUserByOkHttp {
                 .add("photo_id", "15447").build();
         Request requestAvatar = new Request.Builder().url("http://app.chakrads.com/user/photos/avatar").post(requestBodyAvatar).build();
         System.out.println(okHttpClient.newCall(requestAvatar).execute().body().string());
-
-
     }
 }
