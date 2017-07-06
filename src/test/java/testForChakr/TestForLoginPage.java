@@ -1,4 +1,4 @@
-package testForHily;
+package testForChakr;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

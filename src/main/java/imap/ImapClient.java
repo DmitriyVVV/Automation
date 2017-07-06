@@ -7,7 +7,7 @@ import javax.mail.search.SearchTerm;
 import java.util.*;
 
 
-public class ImapClient extends Imap {
+public class  ImapClient extends Imap {
 
     private String email;
     private String password;

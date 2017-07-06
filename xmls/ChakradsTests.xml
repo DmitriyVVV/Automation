@@ -4,35 +4,35 @@
 
 	<test name="LoginPage">
 		<classes>
-			<class name="testForHily.TestForLoginPage">
+			<class name="testForChakr.TestForLoginPage">
 			</class>
 		</classes>
 	</test>
 
 	<test name="ActivityPage">
 		<classes>
-			<class name="testForHily.TestOfActivity">
+			<class name="testForChakr.TestOfActivity">
 			</class>
 		</classes>
 	</test>
 
 	<test name="SettingsPage">
 		<classes>
-			<class name="testForHily.TestOfSettingsPage">
+			<class name="testForChakr.TestOfSettingsPage">
 			</class>
 		</classes>
 	</test>
 
 	<test name="MessagesPage">
 		<classes>
-			<class name="testForHily.TestsForMessagesPage">
+			<class name="testForChakr.TestsForMessagesPage">
 			</class>
 		</classes>
 	</test>
 
 	<test name="MainPage">
 		<classes>
-			<class name="testForHily.TestsOfMainPage">
+			<class name="testForChakr.TestsOfMainPage">
 			</class>
 		</classes>
 	</test>

@@ -1,7 +1,6 @@
-package testForHily;
+package testForChakr;
 
 import helper.Factory;
-import javafx.scene.layout.Priority;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;

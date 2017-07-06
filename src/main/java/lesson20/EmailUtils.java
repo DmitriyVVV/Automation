@@ -53,6 +53,18 @@ public class EmailUtils {
         System.out.println(getTextFromMessage(message));
     }
 
+    @Test
+    public void getLinks() throws InterruptedException, EmailException, MessagingException, IOException {
+        ImapClient imapClient = new ImapClient("automationtestsnew@gmail.com", "qwe1rty2");
+        imapClient.connect();
+        Message message = imapClient.findMessages(With.from("noreply@chakrads.com")).get(0);
+        //System.out.println(getTextFromMessage(message));
+
+        MessageContent messageContent = new MessageContent(getTextFromMessage(message));
+        messageContent.getLinkUrls();
+        System.out.println(messageContent.getLinkUrls());
+    }
+
 
     private String getTextFromMessage(Message message) throws MessagingException, IOException {
         String result = "";

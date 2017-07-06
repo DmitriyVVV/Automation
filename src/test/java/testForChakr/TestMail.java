@@ -1,11 +1,10 @@
-package testForHily;
+package testForChakr;
 
 
 import core.BrowserFactory;
 import org.openqa.selenium.By;
 import helper.CreateUser;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package testForHily;
+package testForChakr;
 
 import okhttp3.*;
 import org.testng.annotations.Test;
@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by Dmitriy on 05.07.2017.

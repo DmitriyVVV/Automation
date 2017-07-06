@@ -18,7 +18,7 @@ import java.io.IOException;
 public class JsoupExample{
     public WebDriver driver = new ChromeDriver();
 
-    //@Test
+    @Test
     public void lalala() throws IOException{
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new UserAgentInterceptor("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")).build();
 
@@ -26,11 +26,11 @@ public class JsoupExample{
 
         Document document = Jsoup.parse(html);
 
-        System.out.println(document.body());
+        //System.out.println(document.body());
         Elements elements = document.select(".exchange-rates-container .rate");
 
         Request request = new Request.Builder().url("http://business-template.com").build();
-       // Response response = okHttpClient.newCall(request).execute();
+        Response response = client.newCall(request).execute();
 
 
     }
@@ -52,9 +52,9 @@ public class JsoupExample{
                 .add("password", "qwe").build();
         Request request = new Request.Builder().url("https://kismia.com/sign/in/").post(requestBody).build();
 
-        System.out.println(client.newCall(request).execute().body().string());
+        //System.out.println(client.newCall(request).execute().body().string());
 
-        driver.get("https://kismia.com/sign/in/");
+
     }
 
 }

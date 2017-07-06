@@ -1,9 +1,8 @@
-package testForHily;
+package testForChakr;
 
 import helper.CheckZipCode;
 import helper.Factory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 /**
