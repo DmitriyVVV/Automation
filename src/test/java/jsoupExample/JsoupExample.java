@@ -30,7 +30,12 @@ public class JsoupExample{
         Elements elements = document.select(".exchange-rates-container .rate");
 
         Request request = new Request.Builder().url("http://business-template.com").build();
-        Response response = client.newCall(request).execute();
+        /*Response response = */client.newCall(request).execute().body();
+
+        System.out.println("<=======================================================================================>");
+        for(Cookie cookie: TestCookies.cookies){
+            System.out.println(cookie.name());
+        }
 
 
     }
@@ -52,7 +57,11 @@ public class JsoupExample{
                 .add("password", "qwe").build();
         Request request = new Request.Builder().url("https://kismia.com/sign/in/").post(requestBody).build();
 
-        //System.out.println(client.newCall(request).execute().body().string());
+        System.out.println(client.newCall(request).execute().body().string());
+        System.out.println("<=======================================================================================>");
+        for(Cookie cookie: TestCookies.cookies){
+            System.out.println(cookie.name());
+        }
 
 
     }

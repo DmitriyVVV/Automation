@@ -2,25 +2,22 @@ package testForChakr;
 
 import okhttp3.*;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Created by Dmitriy on 05.07.2017.
  */
 public class CreateUserByOkHttp {
 
-    public static List<Cookie> cookies = new ArrayList<>();
-
     public OkHttpClient okHttpClient = new OkHttpClient.Builder().cookieJar(new DefaultCookieStorage())
             .addInterceptor(new UserAgentInterceptor("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4)" +
             " AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")).build();
 
+    public static List<Cookie> cookies = new ArrayList<>();
 
     public String generateEmail(int size){
 
@@ -57,6 +54,7 @@ public class CreateUserByOkHttp {
     @Test
     public void createUser() throws IOException{
 
+
         String email = generateEmail(5);
         addEmailToList(email);
 
@@ -67,10 +65,24 @@ public class CreateUserByOkHttp {
                 .add("gender", "1")
                 .add("captcha", "null").build();
         Request requestMainStep = new Request.Builder().url("http://auth.chakrads.com/registration").post(requestBodyMainStep).build();
-        String s = okHttpClient.newCall(requestMainStep).execute().body().string();
+        //Response response = okHttpClient.newCall(requestMainStep).execute();
+        String s  = okHttpClient.newCall(requestMainStep).execute().body().string();
         System.out.println(s);
-        List<Cookie> cookies = new ArrayList<>();
-        //DefaultCookieStorage cookieStorage = new DefaultCookieStorage().saveFromResponse(, cookies);
+        String accessToken = s.substring(s.indexOf("{\"accessToken\":\"")+16, s.indexOf("\",\"userId\""));
+        String userId = s.substring(s.indexOf("\",\"userId\":")+11, s.indexOf(",\"expires\":"));
+        String expires = s.substring(s.indexOf(",\"expires\":")+11, s.indexOf(",\"refreshToken\":\""));
+        String refreshToken = s.substring(s.indexOf(",\"refreshToken\":\"")+17, s.indexOf("\"}"));
+
+        System.out.println(accessToken);
+        System.out.println(userId);
+        System.out.println(expires);
+        System.out.println(refreshToken);
+
+        Cookie cookie;
+
+        /*for(Cookie cookie: DefaultCookieStorage.cookies){
+            System.out.println(cookie.name());
+        }*/
 
         RequestBody requestBodyBirthDate = new FormBody.Builder()
                 .add("birth_date", "1990-05-05").build();

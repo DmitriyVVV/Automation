@@ -8,13 +8,15 @@ import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
 import java.util.Properties;
 
-
+/**
+ * Created by lolik on 25.05.2016.
+ */
 public class EmailSender {
 
     String mailTo = "";
 
-    final String username = "";
-    final String password = "";
+    final String username = "jenkins.kismia@gmail.com";
+    final String password = "qwe1rty2";
 
     Properties props = new Properties();
 
@@ -69,7 +71,7 @@ public class EmailSender {
             MimeMultipart content = new MimeMultipart();
             MimeBodyPart imagePart = new MimeBodyPart();
 
-            imagePart.attachFile("");
+            imagePart.attachFile("C:\\maksTableau.png");
 
             content.addBodyPart(imagePart);
 
