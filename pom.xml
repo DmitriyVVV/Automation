@@ -35,8 +35,17 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite}</suiteXmlFile>
                     </suiteXmlFiles>
+
+                    <systemProperties>
+                        <property>
+                            <name>userEmail</name>
+                            <value>automationtestsnew@gmail.com</value>
+                        </property>
+                    </systemProperties>
+
                 </configuration>
             </plugin>
+
 
         </plugins>
     </build>

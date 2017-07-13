@@ -8,9 +8,8 @@ import org.testng.annotations.Test;
  */
 public class ParamsExample {
     @Test
-    @Parameters({"email", "pass"})
-    public void login(String email, String password){
+    @Parameters({"userEmail"})
+    public void login(String email){
         System.out.println(email);
-        System.out.println(password);
     }
 }
